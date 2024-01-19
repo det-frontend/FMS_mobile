@@ -108,6 +108,7 @@ function CustomerPicker({ icon,items, placeholder,selectedItem,onSelectedItem,on
               <View style={{
                   flex: 1,
                   backgroundColor: color.bottomActiveNavigation,
+                  paddingTop: 10
               }}>
                   <Button title={"Close"} onPress={() => setModalVisible(false)}></Button> 
                   <SearchBar onSearch={handleSearch} />

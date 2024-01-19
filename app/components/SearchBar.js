@@ -10,7 +10,7 @@ function SearchBar({onSearch}) {
           alignItems: 'center',
           gap: 20,
           paddingHorizontal: 20,
-          marginBottom: 30,
+          marginBottom: 10,
           elevation: 50,
           backgroundColor:color.bottomActiveNavigation
           

@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "FMS",
-    "slug": "realtimefms",
+    "name": "FMS_mobile",
+    "slug": "fmsmobile",
     "version": "1.0.0",
-    "orientation": "landscape",
+    "orientation": "portrait",
     "icon": "./assets/adaptive-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -30,9 +28,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "eddd2b25-c192-4245-8d1c-a85772808fe5"
+        "projectId": "b4a89b76-70ad-4d3f-a0ba-2796901372fb"
       }
     },
-    "owner": "thuranyi"
+    "owner": "htoo_khant002"
   }
 }

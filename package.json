@@ -43,6 +43,7 @@
     "react-native-svg": "13.4.0",
     "react-native-tab-view": "^3.5.2",
     "react-native-table-component": "^1.2.2",
+    "twrnc": "^3.6.7",
     "yup": "^1.2.0"
   },
   "devDependencies": {

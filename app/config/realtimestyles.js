@@ -12,8 +12,7 @@ export default {
           justifyContent: 'space-around',   
           backgroundColor: color.bottomActiveNavigation,
           borderRadius: 15,
-          padding:10,
-          elevation: 60,
+          padding:5,
           shadowColor:'black'
       },
     show: {
