@@ -258,7 +258,7 @@ const RealTimeCounting = ({
           } */}
           <Button
             title={"Update"}
-            width={50}
+            width={100}
             color={color.activeColor}
             onPress={handleRealTimeUpdate}
           ></Button>

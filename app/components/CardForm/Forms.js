@@ -164,7 +164,7 @@ const RealTimeForms = ({
       <Button
         disabled={permitButtonDisable}
         title={"Permit"}
-        width={20}
+        width={50}
         color={color.activeColor}
         onPress={handlePermit}
       />

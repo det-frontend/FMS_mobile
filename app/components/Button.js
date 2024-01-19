@@ -21,7 +21,7 @@ function Button({
         fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 5,
+        marginTop: 10,
         display: "flex",
         marginLeft: "auto",
         borderRadius: 3,
