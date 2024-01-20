@@ -1,9 +1,12 @@
 import { View, Text, ScrollView } from "react-native";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import TableFrame from "../../components/TableFrame";
 import tw from "twrnc";
+import vocContext from "../../auth/vouContext";
 const index = () => {
-  const [fetchNew, setFetchNew] = useState(false);
+  // const [fetchNew, setFetchNew] = useState(false);
+  const { setFetchNew, fetchNew } = useContext(vocContext);
+
   return (
     <ScrollView horizontal={true}>
       <ScrollView>

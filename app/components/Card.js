@@ -9,7 +9,7 @@ import {
   Modal,
 } from "react-native";
 import color from "../config/color";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ModelPopUp from "./ModelPopUp";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import PermitApi from "../api/permit";
@@ -22,6 +22,7 @@ import ErrorApi from "../api/errorUpdate";
 import UpdateInfosApi from "../api/updateInfos";
 import ReadyState from "./ReadyState";
 import presetApi from "../api/preset";
+import vocContext from "../auth/vouContext";
 
 function Card({
   title = "1",
@@ -35,12 +36,15 @@ function Card({
   setLiveData,
   setFinalData,
   setAllDone,
-  setFetchNew,
+  // setFetchNew,
   checkLiveRef,
   approve,
   setApprove,
   liveDespenserHistory,
 }) {
+  const { setFetchNew, fetchNew } = useContext(vocContext);
+  console.log("dd");
+  console.log(fetchNew);
   const [isClosed, setIsClosed] = useState(false);
   const [visible, setVisible] = useState(false);
   const [isAlready, setIsAlready] = useState(false);
@@ -94,6 +98,18 @@ function Card({
   console.log("====================================");
   console.log(obj.nozzle_no);
   console.log("====================================");
+
+  // console.log(
+  //   obj.dep_no,
+  //   obj.nozzle_no,
+  //   obj.fuel_type,
+  //   premitFormInfo.value,
+  //   premitFormInfo.carNo,
+  //   premitFormInfo.vehicleType,
+  //   premitFormInfo.cashType,
+  //   obj.daily_price,
+  //   premitFormInfo.couObjId
+  // );
 
   const handleReadyState = async () => {
     // if (!presetButtonDisable) {
@@ -165,6 +181,29 @@ function Card({
 
     if (premitFormInfo.type === "kyat") {
       setLoading(true);
+      console.log(
+        obj.dep_no,
+        obj.nozzle_no,
+        obj.fuel_type,
+        premitFormInfo.value,
+        premitFormInfo.carNo,
+        premitFormInfo.vehicleType,
+        premitFormInfo.cashType,
+        obj.daily_price,
+        premitFormInfo.couObjId
+      );
+      console.log(
+        typeof obj.dep_no,
+        typeof obj.nozzle_no,
+        typeof obj.fuel_type,
+        typeof premitFormInfo.value,
+        typeof premitFormInfo.carNo,
+        typeof premitFormInfo.vehicleType,
+        typeof premitFormInfo.cashType,
+        typeof obj.daily_price,
+        typeof premitFormInfo.couObjId
+      );
+
       const permitObject = await presetApi.price(
         obj.dep_no,
         obj.nozzle_no,
