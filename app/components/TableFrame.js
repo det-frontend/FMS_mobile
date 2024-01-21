@@ -1,9 +1,18 @@
-import { View, Text, StyleSheet, FlatList, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import Table from "./Table";
 import color from "../config/color";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DailySaleApi from "../api/getDailySale";
 import defaultStyles from "../config/styles";
+import vocContext from "../auth/vouContext";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const items = [
   {
@@ -188,7 +197,8 @@ const items = [
   },
 ];
 
-function TableFrame({ fetchNew, height = "25%" }) {
+function TableFrame({ height = "25%" }) {
+  const { fetchNew, setFetchNew } = useContext(vocContext);
   const [dailySale, setDailySale] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -232,6 +242,26 @@ function TableFrame({ fetchNew, height = "25%" }) {
         elevation: 30,
       }}
     >
+      <TouchableOpacity onPress={() => setFetchNew((pre) => !pre)}>
+        <Text
+          style={{
+            backgroundColor: color.activeColor,
+            borderRadius: 4,
+            flexDirection: "row",
+            alignItems: "center",
+            width: "100%",
+            padding: 5,
+            fontSize: 12,
+            gap: 2,
+            textAlign: "center",
+            fontWeight: "300",
+            marginBottom: 5,
+          }}
+        >
+          Reload
+          <MaterialCommunityIcons size={12} name="reload" />
+        </Text>
+      </TouchableOpacity>
       <View style={{ flexDirection: "row" }}>
         <View style={[defaultStyles.tableCell, { width: 120 }]}>
           <Text
@@ -273,7 +303,7 @@ function TableFrame({ fetchNew, height = "25%" }) {
             P of U
           </Text>
         </View>
-        <View style={[defaultStyles.tableCell, { width: 30 }]}>
+        <View style={[defaultStyles.tableCell, { width: 50 }]}>
           <Text
             style={[
               defaultStyles.tableCellText,
@@ -293,7 +323,7 @@ function TableFrame({ fetchNew, height = "25%" }) {
             Fuel Type
           </Text>
         </View>
-        <View style={[defaultStyles.tableCell, { width: 60 }]}>
+        <View style={[defaultStyles.tableCell, { width: 80 }]}>
           <Text
             style={[
               defaultStyles.tableCellText,
@@ -303,7 +333,7 @@ function TableFrame({ fetchNew, height = "25%" }) {
             Sale Liter
           </Text>
         </View>
-        <View style={[defaultStyles.tableCell, { width: 80 }]}>
+        <View style={[defaultStyles.tableCell, { width: 100 }]}>
           <Text
             style={[
               defaultStyles.tableCellText,

@@ -16,16 +16,16 @@ function Table({ item, no }) {
       <View style={[defaultStyles.tableCell, { width: 90 }]}>
         <Text style={defaultStyles.tableCellText}>{item.vehicleType}</Text>
       </View>
-      <View style={[defaultStyles.tableCell, { width: 30 }]}>
+      <View style={[defaultStyles.tableCell, { width: 50 }]}>
         <Text style={defaultStyles.tableCellText}>{item.nozzleNo}</Text>
       </View>
       <View style={[defaultStyles.tableCell, { width: 80 }]}>
         <Text style={defaultStyles.tableCellText}>{item.fuelType}</Text>
       </View>
-      <View style={[defaultStyles.tableCell, { width: 60 }]}>
+      <View style={[defaultStyles.tableCell, { width: 80 }]}>
         <Text style={defaultStyles.tableCellText}>{item.saleLiter}</Text>
       </View>
-      <View style={[defaultStyles.tableCell, { width: 80 }]}>
+      <View style={[defaultStyles.tableCell, { width: 100 }]}>
         <Text style={defaultStyles.tableCellText}>
           {(item.saleLiter / 4.16).toFixed(3)}
         </Text>
