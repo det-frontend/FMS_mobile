@@ -95,9 +95,9 @@ function Card({
     setVisible(true);
   };
 
-  console.log("====================================");
-  console.log(obj.nozzle_no);
-  console.log("====================================");
+  console.log("====ffff================================");
+  console.log(obj);
+  console.log("=====ffff===============================");
 
   // console.log(
   //   obj.dep_no,
